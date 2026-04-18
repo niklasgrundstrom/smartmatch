@@ -8,7 +8,6 @@ from detailer import get_consultant_detail
 from extractor import extract_competences, extract_consultant_profile
 from matcher import match_consultants, load_consultants, DATA_PATH
 from file_parser import parse_file
-from matcher import match_consultants
 
 app = FastAPI(redirect_slashes=False)
 
