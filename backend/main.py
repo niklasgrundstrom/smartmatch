@@ -4,9 +4,9 @@ from pydantic import BaseModel
 
 from extractor import extract_competences
 from matcher import match_consultants
-from parser import parse_file
+from file_parser import parse_file
 
-app = FastAPI()
+app = FastAPI(redirect_slashes=False)
 
 app.add_middleware(
     CORSMiddleware,
