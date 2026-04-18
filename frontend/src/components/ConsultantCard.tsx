@@ -4,9 +4,10 @@ import { SkillBadge } from './SkillBadge'
 interface Props {
   match: ConsultantMatch
   rank: number
+  onClick?: (match: ConsultantMatch) => void
 }
 
-export function ConsultantCard({ match, rank }: Props) {
+export function ConsultantCard({ match, rank, onClick }: Props) {
   const scoreColor =
     match.matchScore >= 80
       ? 'text-green-700 bg-green-50 border-green-300'
@@ -19,7 +20,13 @@ export function ConsultantCard({ match, rank }: Props) {
     : match.profile_summary
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 flex flex-col gap-4">
+    <div
+      className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 flex flex-col gap-4 cursor-pointer hover:shadow-md hover:border-gray-300 transition-shadow"
+      onClick={() => onClick?.(match)}
+      role="button"
+      tabIndex={0}
+      onKeyDown={e => e.key === 'Enter' && onClick?.(match)}
+    >
       <div className="flex items-start justify-between gap-4">
         <div className="flex items-center gap-3 min-w-0">
           <div className="shrink-0 w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold text-sm">

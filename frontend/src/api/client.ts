@@ -60,3 +60,34 @@ export async function matchConsultants(
   if (!res.ok) throw new Error('Matching failed')
   return res.json()
 }
+
+export interface RequirementRating {
+  requirement: string
+  rating: number
+  rationale: string
+}
+
+export interface DetailResponse {
+  must_haves: RequirementRating[]
+  nice_to_haves: RequirementRating[]
+}
+
+export async function fetchDetail(
+  match: ConsultantMatch,
+  requestText: string
+): Promise<DetailResponse> {
+  const res = await fetch(`${API_URL}/api/detail`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      consultant_id: match.consultantId,
+      request_text: requestText,
+      match_score: match.matchScore,
+      matched_skills: match.matchedSkills,
+      missing_skills: match.missingSkills,
+      explanation: match.explanation,
+    }),
+  })
+  if (!res.ok) throw new Error('Detail fetch failed')
+  return res.json()
+}
