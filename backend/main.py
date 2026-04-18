@@ -2,9 +2,10 @@ from fastapi import FastAPI, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
+from detailer import get_consultant_detail
 from extractor import extract_competences
-from matcher import match_consultants
 from file_parser import parse_file
+from matcher import match_consultants
 
 app = FastAPI(redirect_slashes=False)
 
@@ -25,6 +26,15 @@ class MatchRequest(BaseModel):
     roles: list[str] = []
     industries: list[str] = []
     languages: list[str] = []
+
+
+class DetailRequest(BaseModel):
+    consultant_id: str
+    request_text: str
+    match_score: int
+    matched_skills: list[str]
+    missing_skills: list[str]
+    explanation: str
 
 
 @app.get("/health")
@@ -55,6 +65,24 @@ async def extract(req: ExtractRequest):
 async def match(req: MatchRequest):
     try:
         result = await match_consultants(req.model_dump())
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e)) from e
+    return result
+
+
+@app.post("/api/detail")
+async def detail(req: DetailRequest):
+    try:
+        result = await get_consultant_detail(
+            consultant_id=req.consultant_id,
+            request_text=req.request_text,
+            match_score=req.match_score,
+            matched_skills=req.matched_skills,
+            missing_skills=req.missing_skills,
+            explanation=req.explanation,
+        )
+    except ValueError as e:
+        raise HTTPException(status_code=404, detail=str(e)) from e
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e)) from e
     return result

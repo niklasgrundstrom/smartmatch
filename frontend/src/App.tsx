@@ -1,16 +1,21 @@
 import { useState } from 'react'
 import { UploadSection } from './components/UploadSection'
 import { ConsultantCard } from './components/ConsultantCard'
-import { uploadFile, extractCompetences, matchConsultants } from './api/client'
-import type { ConsultantMatch, ExtractResponse } from './api/client'
+import { ConsultantDetailView } from './components/ConsultantDetailView'
+import { uploadFile, extractCompetences, matchConsultants, fetchDetail } from './api/client'
+import type { ConsultantMatch, ExtractResponse, DetailResponse } from './api/client'
 
-type Stage = 'idle' | 'loading' | 'results' | 'error'
+type Stage = 'idle' | 'loading' | 'results' | 'error' | 'detail'
 
 export default function App() {
   const [stage, setStage] = useState<Stage>('idle')
   const [matches, setMatches] = useState<ConsultantMatch[]>([])
   const [extracted, setExtracted] = useState<ExtractResponse | null>(null)
   const [error, setError] = useState('')
+  const [requestText, setRequestText] = useState('')
+  const [selectedMatch, setSelectedMatch] = useState<ConsultantMatch | null>(null)
+  const [detail, setDetail] = useState<DetailResponse | null>(null)
+  const [detailLoading, setDetailLoading] = useState(false)
 
   async function handleSubmit(text: string, file?: File) {
     setStage('loading')
@@ -20,6 +25,7 @@ export default function App() {
       if (file) {
         rawText = await uploadFile(file)
       }
+      setRequestText(rawText)
       const ext = await extractCompetences(rawText)
       setExtracted(ext)
       const result = await matchConsultants(ext.competences, ext.roles)
@@ -31,6 +37,19 @@ export default function App() {
     }
   }
 
+  async function handleSelectConsultant(match: ConsultantMatch) {
+    setSelectedMatch(match)
+    setDetail(null)
+    setStage('detail')
+    setDetailLoading(true)
+    try {
+      const result = await fetchDetail(match, requestText)
+      setDetail(result)
+    } finally {
+      setDetailLoading(false)
+    }
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-3xl mx-auto px-4 py-12">
@@ -39,12 +58,14 @@ export default function App() {
           <p className="mt-2 text-gray-500 text-lg">AI-powered consultant matching by Rejlers</p>
         </header>
 
-        <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 mb-8">
-          <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">
-            Consultant Request
-          </p>
-          <UploadSection onSubmit={handleSubmit} loading={stage === 'loading'} />
-        </div>
+        {stage !== 'detail' && (
+          <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 mb-8">
+            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">
+              Consultant Request
+            </p>
+            <UploadSection onSubmit={handleSubmit} loading={stage === 'loading'} />
+          </div>
+        )}
 
         {stage === 'loading' && (
           <div className="text-center py-16">
@@ -82,7 +103,12 @@ export default function App() {
             </p>
 
             {matches.map((m, i) => (
-              <ConsultantCard key={m.consultantId} match={m} rank={i + 1} />
+              <ConsultantCard
+                key={m.consultantId}
+                match={m}
+                rank={i + 1}
+                onClick={handleSelectConsultant}
+              />
             ))}
 
             <button
@@ -92,6 +118,15 @@ export default function App() {
               ← Start over
             </button>
           </div>
+        )}
+
+        {stage === 'detail' && selectedMatch && (
+          <ConsultantDetailView
+            match={selectedMatch}
+            detail={detail}
+            loading={detailLoading}
+            onBack={() => setStage('results')}
+          />
         )}
       </div>
     </div>
