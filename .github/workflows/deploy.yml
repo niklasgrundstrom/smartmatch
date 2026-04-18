@@ -1,0 +1,54 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy-frontend:
+    name: Deploy frontend
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install & build
+        run: |
+          npm ci
+          npm run build
+        env:
+          VITE_API_URL: ${{ secrets.VITE_API_URL }}
+
+      # Replace this step with your actual deploy target:
+      # - Vercel: use amondnet/vercel-action
+      # - Netlify: use nwtgck/actions-netlify
+      # - S3: use aws-actions/configure-aws-credentials + aws s3 sync
+      - name: Deploy (placeholder)
+        run: echo "Add your deploy step here"
+
+  deploy-backend:
+    name: Deploy backend
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # Replace with your backend deploy target:
+      # - Render: auto-deploys from main, no workflow needed
+      # - Railway: use railwayapp/railway-action
+      # - Fly.io: use superfly/flyctl-actions
+      - name: Deploy (placeholder)
+        run: echo "Add your deploy step here"
