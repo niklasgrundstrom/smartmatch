@@ -13,7 +13,7 @@ PID_FILE = Path(__file__).parent / ".pid"
 def start():
     import subprocess
     proc = subprocess.Popen(
-        [sys.executable, "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"],
+        [sys.executable, "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080", "--reload"],
         cwd=Path(__file__).parent,
     )
     PID_FILE.write_text(str(proc.pid))

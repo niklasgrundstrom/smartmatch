@@ -120,7 +120,7 @@ Skill levels follow the Rejlers scale: 1=Basic, 2=Intermediate, 3=High, 4=Very H
 
 ## Conventions
 - All API responses use camelCase JSON
-- Backend runs on port `8000`, frontend on port `5173`
+- Backend runs on port `8080`, frontend on port `5173`
 - Frontend calls backend via `VITE_API_URL` env variable (default: `http://localhost:8000`)
 - Use `python-dotenv` in backend to load `.env`
 - All new backend routes go in `main.py` for now — keep it simple
@@ -144,7 +144,7 @@ ANTHROPIC_API_KEY=your_key_here
 ```
 **frontend/.env**
 ```
-VITE_API_URL=http://localhost:8000
+VITE_API_URL=http://localhost:8080
 ```
 
 ## What Good Looks Like
