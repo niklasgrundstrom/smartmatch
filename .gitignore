@@ -17,6 +17,10 @@ node_modules/
 frontend/dist/
 frontend/.vite/
 
+# Runtime
+*.pid
+backend/.pid
+
 # OS
 .DS_Store
 Thumbs.db
