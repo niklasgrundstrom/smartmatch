@@ -1,9 +1,11 @@
+import json
+
 from fastapi import FastAPI, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
-from extractor import extract_competences
-from matcher import match_consultants
+from extractor import extract_competences, extract_consultant_profile
+from matcher import match_consultants, load_consultants, DATA_PATH
 from file_parser import parse_file
 
 app = FastAPI(redirect_slashes=False)
@@ -49,6 +51,27 @@ async def extract(req: ExtractRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e)) from e
     return result
+
+
+@app.post("/api/consultants")
+async def add_consultant(file: UploadFile):
+    content = await file.read()
+    try:
+        text = await parse_file(content, file.filename or "")
+        consultant = await extract_consultant_profile(text)
+        consultants = load_consultants()
+        max_id = max(
+            (int(c["id"]) for c in consultants if str(c.get("id", "")).isdigit()),
+            default=0,
+        )
+        consultant["id"] = str(max_id + 1).zfill(3)
+        consultants.append(consultant)
+        DATA_PATH.write_text(
+            json.dumps(consultants, ensure_ascii=False, indent=2), encoding="utf-8"
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e)) from e
+    return consultant
 
 
 @app.post("/api/match")

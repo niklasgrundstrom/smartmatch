@@ -3,132 +3,496 @@
     "id": "001",
     "name": "Niklas Grundström",
     "title": "Senior Python Developer",
-    "roles": ["Backend Developer", "Data Engineer"],
-    "skills": [
-      { "name": "Python", "level": 5 },
-      { "name": "BI", "level": 4 },
-      { "name": "SQL", "level": 4 },
-      { "name": "Azure", "level": 3 },
-      { "name": "FastAPI", "level": 4 },
-      { "name": "Power BI", "level": 4 }
+    "roles": [
+      "Backend Developer",
+      "Data Engineer"
     ],
-    "industries": ["Energy", "Finance"],
-    "languages": ["Swedish", "English"],
+    "skills": [
+      {
+        "name": "Python",
+        "level": 5
+      },
+      {
+        "name": "BI",
+        "level": 4
+      },
+      {
+        "name": "SQL",
+        "level": 4
+      },
+      {
+        "name": "Azure",
+        "level": 3
+      },
+      {
+        "name": "FastAPI",
+        "level": 4
+      },
+      {
+        "name": "Power BI",
+        "level": 4
+      }
+    ],
+    "industries": [
+      "Energy",
+      "Finance"
+    ],
+    "languages": [
+      "Swedish",
+      "English"
+    ],
     "summary": "Senior Python developer with 7 years of experience in data engineering and BI solutions. Deep domain knowledge in the energy sector. Strong SQL and Azure skills."
   },
   {
     "id": "002",
     "name": "Anna Svensson",
     "title": "Senior Backend Developer",
-    "roles": ["Backend Developer", "Solution Architect"],
-    "skills": [
-      { "name": "Python", "level": 4 },
-      { "name": "Azure", "level": 4 },
-      { "name": "SQL", "level": 4 },
-      { "name": "REST API", "level": 5 },
-      { "name": "Docker", "level": 3 }
+    "roles": [
+      "Backend Developer",
+      "Solution Architect"
     ],
-    "industries": ["Finance", "Telecom"],
-    "languages": ["Swedish", "English"],
+    "skills": [
+      {
+        "name": "Python",
+        "level": 4
+      },
+      {
+        "name": "Azure",
+        "level": 4
+      },
+      {
+        "name": "SQL",
+        "level": 4
+      },
+      {
+        "name": "REST API",
+        "level": 5
+      },
+      {
+        "name": "Docker",
+        "level": 3
+      }
+    ],
+    "industries": [
+      "Finance",
+      "Telecom"
+    ],
+    "languages": [
+      "Swedish",
+      "English"
+    ],
     "summary": "Senior backend developer with 8 years of experience building REST APIs and cloud solutions on Azure. Strong Python and SQL skills."
   },
   {
     "id": "003",
     "name": "Erik Lindqvist",
     "title": "Frontend Developer",
-    "roles": ["Frontend Developer", "UX Developer"],
-    "skills": [
-      { "name": "React", "level": 5 },
-      { "name": "TypeScript", "level": 5 },
-      { "name": "CSS", "level": 4 },
-      { "name": "Node.js", "level": 3 },
-      { "name": "Figma", "level": 3 }
+    "roles": [
+      "Frontend Developer",
+      "UX Developer"
     ],
-    "industries": ["Retail", "Public sector"],
-    "languages": ["Swedish", "English"],
+    "skills": [
+      {
+        "name": "React",
+        "level": 5
+      },
+      {
+        "name": "TypeScript",
+        "level": 5
+      },
+      {
+        "name": "CSS",
+        "level": 4
+      },
+      {
+        "name": "Node.js",
+        "level": 3
+      },
+      {
+        "name": "Figma",
+        "level": 3
+      }
+    ],
+    "industries": [
+      "Retail",
+      "Public sector"
+    ],
+    "languages": [
+      "Swedish",
+      "English"
+    ],
     "summary": "Frontend developer specializing in React and TypeScript. 5 years of experience building responsive web applications. Good eye for UX and design."
   },
   {
     "id": "004",
     "name": "Sara Johansson",
     "title": "DevOps Engineer",
-    "roles": ["DevOps Engineer", "Cloud Engineer"],
-    "skills": [
-      { "name": "Kubernetes", "level": 4 },
-      { "name": "Docker", "level": 5 },
-      { "name": "AWS", "level": 4 },
-      { "name": "Terraform", "level": 4 },
-      { "name": "Python", "level": 3 },
-      { "name": "CI/CD", "level": 5 }
+    "roles": [
+      "DevOps Engineer",
+      "Cloud Engineer"
     ],
-    "industries": ["Finance", "Energy"],
-    "languages": ["Swedish", "English", "German"],
+    "skills": [
+      {
+        "name": "Kubernetes",
+        "level": 4
+      },
+      {
+        "name": "Docker",
+        "level": 5
+      },
+      {
+        "name": "AWS",
+        "level": 4
+      },
+      {
+        "name": "Terraform",
+        "level": 4
+      },
+      {
+        "name": "Python",
+        "level": 3
+      },
+      {
+        "name": "CI/CD",
+        "level": 5
+      }
+    ],
+    "industries": [
+      "Finance",
+      "Energy"
+    ],
+    "languages": [
+      "Swedish",
+      "English",
+      "German"
+    ],
     "summary": "DevOps engineer with 6 years of experience in cloud infrastructure, containerization, and CI/CD pipelines. AWS certified."
   },
   {
     "id": "005",
     "name": "Marcus Bergström",
     "title": "Data Scientist",
-    "roles": ["Data Scientist", "ML Engineer"],
-    "skills": [
-      { "name": "Python", "level": 5 },
-      { "name": "Machine Learning", "level": 5 },
-      { "name": "SQL", "level": 3 },
-      { "name": "TensorFlow", "level": 4 },
-      { "name": "Azure", "level": 3 },
-      { "name": "Power BI", "level": 2 }
+    "roles": [
+      "Data Scientist",
+      "ML Engineer"
     ],
-    "industries": ["Healthcare", "Finance"],
-    "languages": ["Swedish", "English"],
+    "skills": [
+      {
+        "name": "Python",
+        "level": 5
+      },
+      {
+        "name": "Machine Learning",
+        "level": 5
+      },
+      {
+        "name": "SQL",
+        "level": 3
+      },
+      {
+        "name": "TensorFlow",
+        "level": 4
+      },
+      {
+        "name": "Azure",
+        "level": 3
+      },
+      {
+        "name": "Power BI",
+        "level": 2
+      }
+    ],
+    "industries": [
+      "Healthcare",
+      "Finance"
+    ],
+    "languages": [
+      "Swedish",
+      "English"
+    ],
     "summary": "Data scientist with 5 years of experience building ML models in healthcare and finance. Strong Python and TensorFlow skills."
   },
   {
     "id": "006",
     "name": "Lena Eriksson",
     "title": "Java Backend Developer",
-    "roles": ["Backend Developer", "Integration Specialist"],
-    "skills": [
-      { "name": "Java", "level": 5 },
-      { "name": "Spring Boot", "level": 5 },
-      { "name": "SQL", "level": 4 },
-      { "name": "REST API", "level": 4 },
-      { "name": "Kafka", "level": 3 }
+    "roles": [
+      "Backend Developer",
+      "Integration Specialist"
     ],
-    "industries": ["Telecom", "Public sector"],
-    "languages": ["Swedish", "English"],
+    "skills": [
+      {
+        "name": "Java",
+        "level": 5
+      },
+      {
+        "name": "Spring Boot",
+        "level": 5
+      },
+      {
+        "name": "SQL",
+        "level": 4
+      },
+      {
+        "name": "REST API",
+        "level": 4
+      },
+      {
+        "name": "Kafka",
+        "level": 3
+      }
+    ],
+    "industries": [
+      "Telecom",
+      "Public sector"
+    ],
+    "languages": [
+      "Swedish",
+      "English"
+    ],
     "summary": "Java backend developer with 10 years of experience in enterprise systems and integrations using Spring Boot and Kafka."
   },
   {
     "id": "007",
     "name": "Johan Nilsson",
     "title": "Full Stack Developer",
-    "roles": ["Full Stack Developer", "Tech Lead"],
-    "skills": [
-      { "name": "React", "level": 4 },
-      { "name": "Node.js", "level": 4 },
-      { "name": "Python", "level": 3 },
-      { "name": "PostgreSQL", "level": 4 },
-      { "name": "Docker", "level": 3 },
-      { "name": "TypeScript", "level": 4 }
+    "roles": [
+      "Full Stack Developer",
+      "Tech Lead"
     ],
-    "industries": ["Retail", "Finance"],
-    "languages": ["Swedish", "English"],
+    "skills": [
+      {
+        "name": "React",
+        "level": 4
+      },
+      {
+        "name": "Node.js",
+        "level": 4
+      },
+      {
+        "name": "Python",
+        "level": 3
+      },
+      {
+        "name": "PostgreSQL",
+        "level": 4
+      },
+      {
+        "name": "Docker",
+        "level": 3
+      },
+      {
+        "name": "TypeScript",
+        "level": 4
+      }
+    ],
+    "industries": [
+      "Retail",
+      "Finance"
+    ],
+    "languages": [
+      "Swedish",
+      "English"
+    ],
     "summary": "Full stack developer with 6 years of experience across React frontends and Node.js/Python backends. Has led small dev teams."
   },
   {
     "id": "008",
     "name": "Karin Persson",
     "title": "Embedded Systems Engineer",
-    "roles": ["Embedded Developer", "Firmware Engineer"],
-    "skills": [
-      { "name": "C", "level": 5 },
-      { "name": "C++", "level": 5 },
-      { "name": "RTOS", "level": 4 },
-      { "name": "Linux", "level": 4 },
-      { "name": "Python", "level": 2 }
+    "roles": [
+      "Embedded Developer",
+      "Firmware Engineer"
     ],
-    "industries": ["Energy", "Manufacturing", "Automotive"],
-    "languages": ["Swedish", "English"],
+    "skills": [
+      {
+        "name": "C",
+        "level": 5
+      },
+      {
+        "name": "C++",
+        "level": 5
+      },
+      {
+        "name": "RTOS",
+        "level": 4
+      },
+      {
+        "name": "Linux",
+        "level": 4
+      },
+      {
+        "name": "Python",
+        "level": 2
+      }
+    ],
+    "industries": [
+      "Energy",
+      "Manufacturing",
+      "Automotive"
+    ],
+    "languages": [
+      "Swedish",
+      "English"
+    ],
     "summary": "Embedded systems engineer with 9 years of experience in firmware development for energy and automotive industries."
+  },
+  {
+    "name": "Andreas Palm",
+    "title": "Data Analyst | BI Developer | Data Scientist",
+    "roles": [
+      "Data Analyst",
+      "BI Developer",
+      "Data Scientist",
+      "Data Architect",
+      "Data Engineer"
+    ],
+    "skills": [
+      {
+        "name": "Microsoft Fabric",
+        "level": 5
+      },
+      {
+        "name": "Power BI",
+        "level": 5
+      },
+      {
+        "name": "Data Warehousing",
+        "level": 5
+      },
+      {
+        "name": "Data Modeling",
+        "level": 5
+      },
+      {
+        "name": "ETL/ELT",
+        "level": 5
+      },
+      {
+        "name": "QlikView",
+        "level": 5
+      },
+      {
+        "name": "Qlik Sense",
+        "level": 5
+      },
+      {
+        "name": "Qlik Cloud",
+        "level": 5
+      },
+      {
+        "name": "SQL",
+        "level": 5
+      },
+      {
+        "name": "Power Query",
+        "level": 5
+      },
+      {
+        "name": "Scrum",
+        "level": 5
+      },
+      {
+        "name": "User Support & Training",
+        "level": 5
+      },
+      {
+        "name": "Power Apps",
+        "level": 4
+      },
+      {
+        "name": "Google Cloud Platform",
+        "level": 4
+      },
+      {
+        "name": "BigQuery",
+        "level": 4
+      },
+      {
+        "name": "Dataform",
+        "level": 4
+      },
+      {
+        "name": "Azure Data Factory",
+        "level": 4
+      },
+      {
+        "name": "Azure",
+        "level": 4
+      },
+      {
+        "name": "SQL Server",
+        "level": 4
+      },
+      {
+        "name": "DevOps",
+        "level": 4
+      },
+      {
+        "name": "Python",
+        "level": 4
+      },
+      {
+        "name": "DAX",
+        "level": 4
+      },
+      {
+        "name": "Data Governance",
+        "level": 4
+      },
+      {
+        "name": "dbt",
+        "level": 3
+      },
+      {
+        "name": "Snowflake",
+        "level": 3
+      },
+      {
+        "name": "JavaScript",
+        "level": 3
+      },
+      {
+        "name": "PostgreSQL",
+        "level": 3
+      },
+      {
+        "name": "Databricks",
+        "level": 2
+      },
+      {
+        "name": "Java",
+        "level": 2
+      },
+      {
+        "name": "AWS",
+        "level": 2
+      },
+      {
+        "name": "PySpark",
+        "level": 3
+      },
+      {
+        "name": "Stakeholder Management",
+        "level": 4
+      },
+      {
+        "name": "Data Analysis",
+        "level": 5
+      }
+    ],
+    "industries": [
+      "High-tech",
+      "Manufacturing",
+      "Retail/E-commerce",
+      "Service",
+      "Logistics"
+    ],
+    "languages": [
+      "Swedish",
+      "English"
+    ],
+    "summary": "Andreas Palm is an experienced Data Analyst, BI Developer, and Data Architect with deep expertise in Power BI, Microsoft Fabric, and Qlik platforms. He has a proven track record of designing and delivering end-to-end data solutions across manufacturing, high-tech, logistics, and retail industries. Combining strong technical skills with excellent stakeholder communication, he transforms complex datasets into actionable insights that drive strategic business decisions.",
+    "id": "009"
   }
 ]

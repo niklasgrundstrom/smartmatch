@@ -40,6 +40,14 @@ export async function extractCompetences(text: string): Promise<ExtractResponse>
   return res.json()
 }
 
+export async function addConsultant(file: File): Promise<{ name: string }> {
+  const formData = new FormData()
+  formData.append('file', file)
+  const res = await fetch(`${API_URL}/api/consultants`, { method: 'POST', body: formData })
+  if (!res.ok) throw new Error('Failed to add consultant')
+  return res.json()
+}
+
 export async function matchConsultants(
   competences: string[],
   roles: string[]
