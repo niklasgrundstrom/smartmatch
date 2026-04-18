@@ -4,6 +4,7 @@ import { ConsultantCard } from './components/ConsultantCard'
 import { ConsultantDetailView } from './components/ConsultantDetailView'
 import { uploadFile, extractCompetences, matchConsultants, fetchDetail } from './api/client'
 import type { ConsultantMatch, ExtractResponse, DetailResponse } from './api/client'
+import { AddConsultantButton } from './components/AddConsultantButton'
 
 type Stage = 'idle' | 'loading' | 'results' | 'error' | 'detail'
 
@@ -53,9 +54,12 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-3xl mx-auto px-4 py-12">
-        <header className="mb-10 text-center">
-          <h1 className="text-4xl font-bold text-gray-900 tracking-tight">SmartMatch</h1>
-          <p className="mt-2 text-gray-500 text-lg">AI-powered consultant matching by Rejlers</p>
+        <header className="mb-10 flex items-center justify-between">
+          <div>
+            <h1 className="text-4xl font-bold text-gray-900 tracking-tight">SmartMatch</h1>
+            <p className="mt-1 text-gray-500">AI-powered consultant matching by Rejlers</p>
+          </div>
+          <AddConsultantButton />
         </header>
 
         {stage !== 'detail' && (
