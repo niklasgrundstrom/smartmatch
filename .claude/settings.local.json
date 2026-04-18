@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(yarn add *)",
+      "Read(//c/Users/ih6857/AppData/Local/Programs//**)",
+      "Read(//c//**)",
+      "Read(//c/Users/ih6857/**)",
+      "Bash(\"/c/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Microsoft/VisualStudio/NodeJs/npm.cmd\" install tailwindcss @tailwindcss/vite)",
+      "Bash(\"/c/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Microsoft/VisualStudio/NodeJs/node_modules/.bin/tsc.cmd\" --noEmit)"
+    ]
+  }
+}

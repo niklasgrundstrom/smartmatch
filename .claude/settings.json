@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(\"/c/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Microsoft/VisualStudio/NodeJs/node.exe\" ./node_modules/.bin/tsc --noEmit)",
+      "Bash(\"/c/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Microsoft/VisualStudio/NodeJs/node.exe\" ./node_modules/typescript/bin/tsc --noEmit)",
+      "Bash(cmd.exe /c \"where python\")",
+      "Bash(cmd.exe /c \"python --version\")",
+      "Bash(cmd.exe /c \"python -m pip --version\")",
+      "Bash(\"/c/Users/ih6857/AppData/Local/Programs/Python/Python39/python.exe\" -m pip --version)",
+      "Bash(curl -v http://localhost:8000/health)",
+      "Bash(curl -s -w \"%{http_code}\" http://localhost:8100/health)"
+    ],
+    "additionalDirectories": [
+      "c:\\code\\smartmatch\\backend"
+    ]
+  }
+}
