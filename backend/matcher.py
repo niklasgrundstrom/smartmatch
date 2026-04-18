@@ -48,7 +48,7 @@ def load_consultants() -> list:
 async def match_consultants(competences: dict) -> dict:
     consultants = load_consultants()
     message = client.messages.create(
-        model="claude-sonnet-4-20250514",
+        model="claude-sonnet-4-6",
         max_tokens=4096,
         messages=[
             {
@@ -60,4 +60,13 @@ async def match_consultants(competences: dict) -> dict:
             }
         ],
     )
-    return json.loads(message.content[0].text)
+    return json.loads(_strip_fences(message.content[0].text))
+
+
+def _strip_fences(text: str) -> str:
+    text = text.strip()
+    if text.startswith("```"):
+        text = text.split("\n", 1)[1]
+    if text.endswith("```"):
+        text = text.rsplit("```", 1)[0]
+    return text.strip()

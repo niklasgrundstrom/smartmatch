@@ -14,7 +14,7 @@ SmartMatch replaces this with semantic AI matching that understands intent, syno
 ## Tech Stack
 - **Frontend:** React + Tailwind CSS (Vite)
 - **Backend:** FastAPI (Python 3.11)
-- **AI:** Anthropic Claude API (`claude-sonnet-4-20250514`)
+- **AI:** Anthropic Claude API (`claude-sonnet-4-6`)
 - **File parsing:** PyMuPDF (PDF), python-docx (Word)
 - **Data:** Mocked consultant profiles as JSON (in `/data/consultants.json`)
 - **Repo:** Monorepo — `frontend/`, `backend/`, `data/`
@@ -113,7 +113,7 @@ Each consultant in `/data/consultants.json` follows this structure:
 Skill levels follow the Rejlers scale: 1=Basic, 2=Intermediate, 3=High, 4=Very High, 5=Expert
 
 ## Claude API Usage
-- Always use model: `claude-sonnet-4-20250514`
+- Always use model: `claude-sonnet-4-6`
 - API key is stored in `backend/.env` as `ANTHROPIC_API_KEY` — never hardcode it
 - For extraction: instruct Claude to return **only valid JSON**, no markdown fences
 - For matching: send all consultant profiles + extracted competences in one prompt, ask for ranked results with scores and explanations
