@@ -68,6 +68,7 @@ export interface RequirementRating {
 }
 
 export interface DetailResponse {
+  ingress: string
   must_haves: RequirementRating[]
   nice_to_haves: RequirementRating[]
 }

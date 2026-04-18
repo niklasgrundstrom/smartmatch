@@ -48,10 +48,13 @@ export function ConsultantDetailView({ match, detail, loading, onBack }: Props) 
 
       <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 flex flex-col gap-4">
         <div className="flex items-start justify-between gap-4">
-          <div>
+          <div className="flex-1 min-w-0">
             <h2 className="text-2xl font-bold text-gray-900">{match.name}</h2>
-            {match.profile_summary && (
-              <p className="text-sm text-gray-500 mt-1">{match.profile_summary}</p>
+            {loading && (
+              <div className="mt-2 h-4 bg-gray-100 rounded animate-pulse w-3/4" />
+            )}
+            {!loading && detail?.ingress && (
+              <p className="text-base text-gray-700 mt-2 leading-relaxed">{detail.ingress}</p>
             )}
           </div>
           <div
@@ -61,11 +64,6 @@ export function ConsultantDetailView({ match, detail, loading, onBack }: Props) 
           </div>
         </div>
 
-        {match.explanation && (
-          <p className="text-sm text-gray-600 italic border-l-2 border-gray-200 pl-3">
-            {match.explanation}
-          </p>
-        )}
       </div>
 
       <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6">
