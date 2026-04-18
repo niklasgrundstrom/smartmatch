@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { UploadSection } from './components/UploadSection'
 import { ConsultantCard } from './components/ConsultantCard'
+import { AddConsultantButton } from './components/AddConsultantButton'
 import { uploadFile, extractCompetences, matchConsultants } from './api/client'
 import type { ConsultantMatch, ExtractResponse } from './api/client'
 
@@ -34,9 +35,12 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-3xl mx-auto px-4 py-12">
-        <header className="mb-10 text-center">
-          <h1 className="text-4xl font-bold text-gray-900 tracking-tight">SmartMatch</h1>
-          <p className="mt-2 text-gray-500 text-lg">AI-powered consultant matching by Rejlers</p>
+        <header className="mb-10 flex items-center justify-between">
+          <div>
+            <h1 className="text-4xl font-bold text-gray-900 tracking-tight">SmartMatch</h1>
+            <p className="mt-1 text-gray-500">AI-powered consultant matching by Rejlers</p>
+          </div>
+          <AddConsultantButton />
         </header>
 
         <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 mb-8">
