@@ -14,7 +14,7 @@ SmartMatch replaces this with semantic AI matching that understands intent, syno
 ## Tech Stack
 - **Frontend:** React + Tailwind CSS (Vite)
 - **Backend:** FastAPI (Python 3.11)
-- **AI:** Anthropic Claude API (`claude-sonnet-4-20250514`)
+- **AI:** Anthropic Claude API (`claude-sonnet-4-6`)
 - **File parsing:** PyMuPDF (PDF), python-docx (Word)
 - **Data:** Mocked consultant profiles as JSON (in `/data/consultants.json`)
 - **Repo:** Monorepo — `frontend/`, `backend/`, `data/`
@@ -113,14 +113,14 @@ Each consultant in `/data/consultants.json` follows this structure:
 Skill levels follow the Rejlers scale: 1=Basic, 2=Intermediate, 3=High, 4=Very High, 5=Expert
 
 ## Claude API Usage
-- Always use model: `claude-sonnet-4-20250514`
+- Always use model: `claude-sonnet-4-6`
 - API key is stored in `backend/.env` as `ANTHROPIC_API_KEY` — never hardcode it
 - For extraction: instruct Claude to return **only valid JSON**, no markdown fences
 - For matching: send all consultant profiles + extracted competences in one prompt, ask for ranked results with scores and explanations
 
 ## Conventions
 - All API responses use camelCase JSON
-- Backend runs on port `8000`, frontend on port `5173`
+- Backend runs on port `8080`, frontend on port `5173`
 - Frontend calls backend via `VITE_API_URL` env variable (default: `http://localhost:8000`)
 - Use `python-dotenv` in backend to load `.env`
 - All new backend routes go in `main.py` for now — keep it simple
@@ -144,7 +144,7 @@ ANTHROPIC_API_KEY=your_key_here
 ```
 **frontend/.env**
 ```
-VITE_API_URL=http://localhost:8000
+VITE_API_URL=http://localhost:8080
 ```
 
 ## What Good Looks Like
