@@ -39,8 +39,11 @@ Step 2: For each requirement, rate how well this specific consultant meets it on
   4 = Strong match (clear evidence)
   5 = Expert-level match (explicitly strong)
 
+Step 3: Write a compelling 2–3 sentence ingress that sells this consultant for the position. Write it as a confident recruiter pitch — highlight their strongest relevant qualities, use active language, and make the reader want to meet this person. Focus on what makes them uniquely suited to this specific role, not generic praise.
+
 Return ONLY valid JSON with this exact structure:
 {{
+  "ingress": "Compelling 2-3 sentence sales pitch here.",
   "must_haves": [
     {{ "requirement": "...", "rating": 4, "rationale": "One sentence." }}
   ],
